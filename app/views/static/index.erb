@@ -1,2 +1,67 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<header id="header">
+	<div id="header-inner">
+		<div class ="container">
+		<!-- ::before -->
+			<h1 class = "header-logo">
+				<a href = "/">
+					<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Bit.ly_Logo.svg/1280px-Bit.ly_Logo.svg.png" width="95px">
+				</a>
+			</h1>
+			<nav class="navigation">
+				<ul>
+					<li>About</li>
+					<li>Blog</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+<!-- <p>See Me in views/static/index.html.erb</p> -->
+<a href="/about">Click here to go to about page!</a>
+<!-- <a href="/signup">Click here to sign up</a> -->
+
+<form action = "/urls" method="post" id="shortenform">
+	Enter URL to shorten:
+	<input type = "text" name = "long_url">
+	<input type = "submit" value = "Shorten URL!">
+</form>
+
+<form action = "/geturls" method="post">
+	Enter short URL to find:
+	<input type = "text" name = "short_url">
+	<input type = "submit" value = "Find URL!">
+</form>
+
+<table class = "table">
+<thead class = "thead-inverse">
+	<tr>
+		<th>No.</th>
+		<th>Long URL</th>
+		<th>Short URL</th>
+		<th>Click count</th>
+
+	</tr>
+
+	<%Url.all.order("id ASC").each_with_index do |u, index|%>
+	<tr>
+		<td>
+
+			<%= index %>
+		</td>
+
+		<td>
+			<a href="<%= "#{u.long_url}" %>"><%= u.long_url %>
+				
+			</a>
+		</td>		
+		<td>
+			<a href="<%= "/#{u.short_url}" %>"><%= "localhost:9393/#{u.short_url}" %>
+				
+			</a>
+		</td>
+		<td>
+			<%= u.counter %>
+		</td>
+	<%end%>
+	</tr>
+</table>

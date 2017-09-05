@@ -1,0 +1,20 @@
+<h1><a href = "/">Zenly</a></h1>
+<!-- <p>See Me in views/static/index.html.erb</p> -->
+
+<p><a href="/about">Click here to go to about page!</a></p>
+<!-- <a href="/signup">Click here to sign up</a> -->
+<%= 
+@url.errors.details[:long_url][0].values[1] + " " + @url.errors.messages.values.flatten.join + "."
+%>
+<p>Please put a proper, non-existing link.</p>
+<form action = "/urls" method="post">
+	Enter URL to shorten:
+	<input type = "text" name = "long_url">
+	<input type = "submit" value = "Shorten URL!">
+</form>
+
+<form action = "/geturls" method="post">
+	Enter short URL to find:
+	<input type = "text" name = "short_url">
+	<input type = "submit" value = "Find URL!">
+</form>

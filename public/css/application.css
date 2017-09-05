@@ -1,0 +1,35 @@
+h1 {
+	color: red;
+	font-size: 2em;
+}
+.container {
+	padding-top: 32px;
+	padding-bottom: 32px;
+}
+
+div#header-inner {
+	display: block;
+	max-width: 920px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+}
+
+li {
+	display: inline-block;
+	float: left;
+	margin-right: 10px;
+}
+
+@media (min-width: 992px)
+#header-inner {
+	max-width: 920px;
+	margin-right: auto;
+	margin-left: auto;	
+}
