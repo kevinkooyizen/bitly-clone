@@ -8,16 +8,13 @@ get '/about' do
 	erb :"static/about"
 end
 
-get '/failed' do
-	erb :"static/failed"
-end
-
 post '/urls' do
 	@url = Url.new(long_url: params[:long_url], counter: 0)
 	if @url.save
-		erb :"static/index"
+		# erb :"static/index"
+		@url.to_json
 	else
-		erb :"static/failed"
+		erb :"static/index"
 	end
 end
 

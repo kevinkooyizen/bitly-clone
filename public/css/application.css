@@ -72,9 +72,9 @@ li {
 	margin-left: auto;*/
 }
 
-body {
+#top-part {
 	background-image: url("/img/AbsolutelyNothing.png");
-	background-size: 100%;
+	background-size: 100% 100%;
 	background-repeat: no-repeat;: 
 }
 
@@ -85,4 +85,20 @@ body {
 
 .shorteninginput {
 	width: 300px;
+}
+
+.shorten_button_hover {
+	background-color: red !important;
+}
+
+/*#shorten_button:hover {
+	color: blue;
+}*/
+
+table, th, td {
+    border: 2px solid black;
+}
+
+td {
+    padding: 10px;
 }

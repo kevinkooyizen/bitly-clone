@@ -1,4 +1,4 @@
-<div id = "top">
+<div id = "top-part">
 	<header id="header">
 		<div id="header-inner">
 			<div class ="container">
@@ -24,45 +24,47 @@
 		<div id="formcontainer">
 			<form action = "/urls" method="post" id="shortenform">
 				<input type = "text" name = "long_url" placeholder = "Paste your answer to life here" class = "shorteninginput">
-				<input type = "submit" value = "SHORTEN">
+				<input type = "submit" value = "SHORTEN" id="shorten_button" class="button">
 			</form>
 		</div>
-		<div id="tablecontainer">
-			<table class = "table">
-			<thead class = "thead-inverse">
-				<tr>
-					<th>No.</th>
-					<th>Long URL</th>
-					<th>Short URL</th>
-					<th>Click count</th>
+	</div>
+</div>
+<div id ="middle">
+	<div id="tablecontainer">
+		<table class = "table" id = "big_table">
+			<thead>
+				<th>No.</th>
+				<th>Long URL</th>
+				<th>Short URL</th>
+				<th>Click count</th>
 
-				</tr>
-
+			</thead>
+			<tbody>
 				<%Url.all.order("id ASC").each_with_index do |u, index|%>
 				<% index += 1 %>
-				<tr>
-					<td align="center">
+					<tr>
+						<td align="center">
 
-						<%= index%>
-					</td>
+							<%= index%>
+						</td>
 
-					<td>
-						<a href="<%= "#{u.long_url}" %>"><%= u.long_url %>
-							
-						</a>
-					</td>		
-					<td>
-						<a href="<%= "/#{u.short_url}" %>"><%= "localhost:9393/#{u.short_url}" %>
-							
-						</a>
-					</td>
-					<td align="center">
-						<%= u.counter %>
-					</td>
+						<td>
+							<a href="<%= "#{u.long_url}" %>"><%= u.long_url %>
+								
+							</a>
+						</td>		
+						<td>
+							<a href="<%= "/#{u.short_url}" %>"><%= "localhost:9393/#{u.short_url}" %>
+								
+							</a>
+						</td>
+						<td align="center">
+							<%= u.counter %>
+						</td>
+					</tr>
 				<%end%>
-				</tr>
-			</table>
-		</div>
+			</tbody>
+		</table>
 	</div>
 </div>
 <!-- <p>See Me in views/static/index.html.erb</p> -->
