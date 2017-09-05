@@ -29,7 +29,7 @@ $(document).ready(function(){
 					<tr>\
 						<td align="center">' + count + '</td>\
 						<td><a href="' + response.long_url + '">' + response.long_url + '</a></td>\
-						<td><a href="/' + response.short_url + '">' + 'localhost:9393/' + response.short_url + '</td>\
+						<td><a href="/' + response.short_url + '">' + 'https://zenly.herokuapp.com/' + response.short_url + '</td>\
 						<td align="center">' + response.counter + '</td>\
 					</tr>\
 					');
@@ -60,7 +60,7 @@ $(document).ready(function(){
 					<tr>\
 						<td align="center">' + count + '</td>\
 						<td><a href="' + response.long_url + '">' + response.long_url + '</a></td>\
-						<td><a href="/' + response.short_url + '">' + 'localhost:9393/' + response.short_url + '</td>\
+						<td><a href="/' + response.short_url + '">' + 'https://zenly.herokuapp.com/' + response.short_url + '</td>\
 						<td align="center">' + response.counter + '</td>\
 					</tr>\
 					');
