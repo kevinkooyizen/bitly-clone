@@ -6,10 +6,9 @@ $(document).ready(function(){
 
 	// this ID here refers to the form where the user types in a URL
 	var form = $('#shortenform');
-	form.on('paste', function(formSubmissionEvent){
-		setTimeout(function () { 
-        console.log($('#myid').val()); 
-    	}, 100);
+	form.on("paste", function(formSubmissionEvent){
+		var pastedData = formSubmissionEvent.originalEvent.clipboardData.getData('text');
+		document.getElementById('shorteninput').value=pastedData ;
 		formSubmissionEvent.preventDefault();
 		console.log("Prevented default action!");
 
@@ -43,6 +42,7 @@ $(document).ready(function(){
     	}, 100);
 		formSubmissionEvent.preventDefault();
 		console.log("Prevented default action!");
+		debugger;
 
 		$('body').prepend('<img src="/img/spinner.gif" id="spinner" />');
 
