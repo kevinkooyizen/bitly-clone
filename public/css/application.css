@@ -65,26 +65,34 @@ li {
 }
 
 #formcontainer {
-	width: 100%;
+	width: 60%;
+	height: 40px;
 	position: relative;
 	text-align: center;
-/*	margin-right: auto;
-	margin-left: auto;*/
-}
-
-#top-part {
-	background-image: url("/img/AbsolutelyNothing.png");
-	background-size: 100% 100%;
-	background-repeat: no-repeat;: 
-}
-
-.table {
-	margin-left: auto;
+	margin-bottom: 30px;
 	margin-right: auto;
+	margin-left: auto;
 }
 
+body {
+	background-image: url("/img/mountains.jpeg");
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+	background-size: cover; 
+}
+
+#shortenform {
+	padding: 20px 30px;
+	clear: auto;
+}
 .shorteninginput {
-	width: 300px;
+	width: 50%;
+	height: 100%;
+}
+
+#shorten_button {
+	width: 100px;
+	height: 100%;
 }
 
 .shorten_button_hover {
@@ -94,6 +102,15 @@ li {
 /*#shorten_button:hover {
 	color: blue;
 }*/
+
+.table {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#top-part {
+	clear: both;
+}
 
 table, th, td {
     border: 2px solid black;

@@ -42,7 +42,6 @@ $(document).ready(function(){
     	}, 100);
 		formSubmissionEvent.preventDefault();
 		console.log("Prevented default action!");
-		debugger;
 
 		$('body').prepend('<img src="/img/spinner.gif" id="spinner" />');
 

@@ -50,3 +50,4 @@ get '/user_profile/:id' do
 	@user = User.find(id)
 	erb :"users/profile"
 end
+
