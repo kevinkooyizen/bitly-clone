@@ -14,7 +14,11 @@ post '/urls' do
 		# erb :"static/index"
 		@url.to_json
 	else
-		erb :"static/index"
+		while @url.errors.messages[:short_url] == ["has already been taken"]
+			@url.short_url = Array.new(5){[*"A".."Z", *"0".."9"].sample}.join
+			@url.save
+		end
+		return @url.to_json
 	end
 end
 
